@@ -42,12 +42,12 @@ export default class  extends Component {
 
 
   render() { {/* calling setstate here results in overflow */}
-  const {title,price,qty} = this.props.product;
+  const {title,price,qty,img} = this.props.product;
     return (
        
       <div className="cart-item">
         <div className="left-block">
-            <img style={styles.image}/>
+            <img style={styles.image} src={img} alt={title}/>
         </div>
         <div className="right-block">
             <div style={{fontSize:25}}>{title}</div>
@@ -67,8 +67,8 @@ export default class  extends Component {
 
 const styles={
     image:{
-      height:120,
-      width:120,
+      height:150,
+      width:150,
       borderRadius:4,
       background:'#ccc'
     }
