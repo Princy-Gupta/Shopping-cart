@@ -45,13 +45,45 @@ export default class  extends Component {
         }
     }
 
+   increase=(product)=>{
+       console.log("increase");
+       const {products}=this.state
+       const idx= products.indexOf(product);
+       products[idx].qty+=1;
+       this.setState({
+           products:products
+       })
+   }
+     
+      
+    decrease=(product)=>{
+        const {products}=this.state
+        const idx= products.indexOf(product);
+        if(products[idx].qty===0)
+        return;
+        products[idx].qty-=1;
+        this.setState({
+            products:products
+        })
+    }
+
+    delete=(product)=>{
+        const {products}=this.state
+        const idx= products.indexOf(product);
+        const items= products.filter((item)=>item.id!==idx);
+        this.setState({
+            products:items
+        })
+
+    }
+
 
   render() {
       const {products}= this.state;
     return (
       <div className="cart">
        {products.map((item)=>{
-           return <Cartitem product={item} key={item.id} />
+           return <Cartitem product={item} key={item.id} increase={this.increase} decrease={this.decrease} delete={this.delete}/>
        })}
       </div>
     )
