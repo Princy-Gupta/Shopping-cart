@@ -46,8 +46,8 @@ export default class  extends Component {
 
 const styles={
     image:{
-      height:150,
-      width:150,
+      height:200,
+      width:200,
       borderRadius:4,
       background:'#ccc'
     }

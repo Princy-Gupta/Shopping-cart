@@ -141,10 +141,10 @@ class App extends React.Component {
     this.db
     .collection('products')
     .add({
-      img:'',
-      price:500,
-      qty: 0,
-      title: 'Samsung Phone'
+      img:'https://images.unsplash.com/photo-1599948128020-9a44505b0d1b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+      price:170,
+      qty: 4,
+      title: 'Nail Paint'
     })
     .then((docref) => {
       console.log("Product added");
@@ -158,7 +158,7 @@ class App extends React.Component {
   return (
     <div className="App">
     <Nav count={this.getCount()}/>
-    {/* <button onClick={this.addProduct}>Add Product</button> */}
+    {/*} <button onClick={this.addProduct}>Add Product</button>  */}
       <Cart increase={this.increase} decrease={this.decrease} delete={this.delete} products={this.state.products}/>
       <h1>Total:{this.getvalue()}</h1>
       <br></br>
