@@ -13,31 +13,10 @@ export default class  extends Component {
     // }
   
 
-   inc=()=>{
-       this.setState((prev)=>{
-           return{
-           qty:prev.qty+1
-           }
-       },()=>{
-        console.log(this.state); {/*async, in promise set state acts like a sync call,
-            When setState is called multiple times it is batched together and re render happens only once.
-        The callbacks for both setStates will be fired after re render.*/}
-    })
-   }
-
+   
 
    
-   dec=()=>{
-    const {qty}=this.state.product;
-    if(qty===0)
-    return;
-       this.setState((prev)=>{
-       return {
-           qty:prev.qty-1
-       }},()=>{
-           console.log(this.state);
-       })
-   }
+   
 
 
 
@@ -57,7 +36,7 @@ export default class  extends Component {
                 {/*buttons*/}
                 <img alt="increase" onClick={()=>this.props.increase(this.props.product)} className="action-icons" src="https://www.flaticon.com/svg/vstatic/svg/1828/1828926.svg?token=exp=1620542541~hmac=7ec6964672e0d7264b6f6dc56b7e166d"/>
                 <img alt="decrease" onClick={()=> this.props.decrease(this.props.product)} className="action-icons" src="https://www.flaticon.com/svg/vstatic/svg/992/992683.svg?token=exp=1620542338~hmac=b0cc68f0b751ae0ca23ef5992d4dbe17"/>
-                <img alt="delete" onClick={()=> this.props.delete(this.props.product)} className="action-icons" src="https://www.flaticon.com/svg/vstatic/svg/3096/3096673.svg?token=exp=1620542610~hmac=c5beeac097238ea43ddc8c5a79b115e9"/>
+                <img alt="delete" onClick={()=> this.props.delete(this.props.product.id)} className="action-icons" src="https://www.flaticon.com/svg/vstatic/svg/3096/3096673.svg?token=exp=1620542610~hmac=c5beeac097238ea43ddc8c5a79b115e9"/>
             </div>
         </div>
       </div>

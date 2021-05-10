@@ -2,12 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import  firebase from 'firebase';
+import 'firebase/firestore';
 
+const firebaseConfig = {
+  apiKey: "AIzaSyB8DFHcgitHQXVJCT0J4Vlm5XqaE0XIq64",
+  authDomain: "shopping-cart-clone.firebaseapp.com",
+  projectId: "shopping-cart-clone",
+  storageBucket: "shopping-cart-clone.appspot.com",
+  messagingSenderId: "678705124239",
+  appId: "1:678705124239:web:839830ce5901b3f47071fa"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
-  <React.StrictMode>
+  
     <App />
-  </React.StrictMode>,
+ ,
   document.getElementById('root')
 );
 
